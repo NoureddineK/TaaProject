@@ -21,7 +21,7 @@ export class SearchPersonComponent implements OnInit {
   }
 
   sendMeHome(){
-    this.router.navigate(['Select']);
+    this.router.navigate(['Home']);
   }
 
 }
