@@ -11,6 +11,7 @@ import { DataService } from '../data.service';
 export class WeatherComponent implements OnInit {
   btnText: string = 'Get Weather';
   cityName: string = '';
+  cityId: number;
   description: string = '';
   temp: number;
   humidity: number;
@@ -54,5 +55,26 @@ export class WeatherComponent implements OnInit {
     }
     this.cityName = '';
   }
+
+  getWeather() {
+      this._data.getWeather(this.cityId).subscribe(data => {
+        console.log(data);
+        this.time = this.convertDate(data.time);
+        this.temp = data.temperature;
+        this.temp.toFixed(0);
+        this.humidity = data.humidity;
+        this.description = data.description;
+      }, err => {
+        console.log(err.message);
+      }, () => {
+        console.log('Completed');
+        console.log('Succes');
+        console.log( " Temperature: " + this.temp +
+          " Time: " + this.time +
+          " Humidity: " + this.humidity +
+          " Description: " + this.description);
+      });
+
+    }
 
 }

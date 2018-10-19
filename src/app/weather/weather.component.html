@@ -3,12 +3,20 @@
   <form>
     <input type="text" class="txt" name="city" placeholder="Search City Weather" [(ngModel)]="cityName" />
     <br /> <input type="submit" class="btn" [value]="btnText" (click)="searchWeather()" />
-    <p>
-      City: {{name}} <br/>
+    
+  </form>
+
+  <form>
+      <input type="text" class="txt" name="city" placeholder="City Id" [(ngModel)]="cityId" />
+      <br /> <input type="submit" class="btn" value="ById" (click)="getWeather()" />  
+    </form>
+  <p>
       Description: {{description}}<br/>
       Temperature: {{temp}}<br/>
       Humidity: {{humidity}}<br/>
       Time: {{time}}<br/>
     </p>
-  </form>
+
+
+
 </div>

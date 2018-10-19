@@ -13,6 +13,12 @@ interface myData {
   sys: Object,
   name: string,
 }
+interface dataWeather {
+  temperature: number,
+  time: number,
+  humidity: number,
+  description: string,
+}
 
 @Injectable()
 export class DataService {
@@ -28,4 +34,9 @@ export class DataService {
     var weatherApi = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + ',fr&appid=bd4f34566c53fd4ec9b07bf3e4995e1c';
     return this.http.get<myData>(weatherApi);
   }
+  getWeather(id) {
+    return this.http.get<dataWeather>("http://localhost:8080/weather/"+id);
+  }
+
+
 }
