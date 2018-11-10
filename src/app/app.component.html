@@ -1,12 +1,24 @@
+<div class="app">
 
-<h1>{{title}}</h1>
-<div>
-  <li><a routerLink="Home">Home</a></li>
-  <li><a routerLink="Search/45">Search</a></li>
-  <li><a routerLink="Add">Add</a></li>
-  <li><a routerLink="Weather">Weather</a></li>
-  <li><a routerLink="Place">Cities</a></li>
-  <li><a routerLink="Sport">Sports</a></li>
-</div>
+  <h1 class="title" >{{title}}</h1>
+  <!--<table>
+    <tr>
+      <td><a routerLink="Home">Home</a></td>
+      <td><a routerLink="Weather">Weather</a></td>
+      <td><a routerLink="Place">Cities</a></td>
+      <td><a routerLink="Sport">Sports</a></td>
+    </tr>
+  </table>
+-->
+
+  <ul class="sidenav">
+      <li><a routerLink="Home">Home</a></li>
+      <li><a routerLink="Weather">Weather</a></li>
+      <li><a routerLink="Place">Cities</a></li>
+      <li><a routerLink="Sport">Sports</a></li>
+    </ul>
+
+
 
   <router-outlet></router-outlet>
+</div>

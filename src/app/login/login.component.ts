@@ -19,18 +19,15 @@ export class LoginComponent implements OnInit {
     this._data.getPersonByName(this.personName).subscribe(data => {
       if ((this.personName !== data.name) || (this.personPword !== data.password)) {
         console.error("password incorrect");
-        
+        this.router.navigate(['SignUp']);
       }
       else{
-        this.sendMeToHome();
+        this.router.navigate(['Home']);
       }
     }, err => {
       console.log(err.message);
     }, () => {
       console.log('Completed');
     });
-  }
-  sendMeToHome() {
-    this.router.navigate(['Home']);
   }
 }

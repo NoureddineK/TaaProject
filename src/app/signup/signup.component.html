@@ -1,0 +1,32 @@
+<form name="signup">
+
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">User Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="username" name="username" placeholder="Your name.." required>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Email</label>
+    </div>
+    <div class="col-75">
+      <input name="mail" ng-model="email" type="email" placeholder="Your mail.."  required>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Pass Word</label>
+    </div>
+    <div class="col-75">
+      <input type="password" pPassword [(ngModel)]="password" class="txt" name="item" placeholder="Your password.." required /></div>
+  </div>
+
+  <div class="row">
+    <input type="submit" (click)="signUp()" class="btn" value="signup" />
+  </div>
+</form>
