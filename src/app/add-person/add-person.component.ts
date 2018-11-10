@@ -48,24 +48,24 @@ export class AddPersonComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._data.person.subscribe(res => this.persons = res);
-    this.itemCount = this.persons.length;
-    this._data.ChangePerson(this.persons);
+   // this._data.person.subscribe(res => this.persons = res);
+   // this.itemCount = this.persons.length;
+   // this._data.ChangePerson(this.persons);
   }
   sendMeHome() {
     this.router.navigate(['Home']);
   }
-  addItem() {
+ /* addItem() {
     if (this.personName != '') {
       this.persons.push(this.personName);
       this.personName = '';
       this.itemCount = this.persons.length;
-      this._data.ChangePerson(this.persons);
+      //this._data.ChangePerson(this.persons);
     }
   }
   removeItem(i) {
     this.persons.splice(i, 1);
     this.itemCount--;
-    this._data.ChangePerson(this.persons);
-  }
+   // this._data.ChangePerson(this.persons);
+  }*/
 }

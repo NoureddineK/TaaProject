@@ -1,22 +1,28 @@
 <div>
-  Input City :
+  Input city name:
   <form>
-    <input type="text" class="txt" name="city" placeholder="Search City Weather" [(ngModel)]="cityName" />
-    <br /> <input type="submit" class="btn" [value]="btnText" (click)="searchWeather()" />
-    
+    <input type="text" class="txt" name="city" placeholder="City name" [(ngModel)]="cityName" />
+    <br /> <input type="submit" class="btn" value="ByName" (click)="getWeather()" />
   </form>
-
-  <form>
-      <input type="text" class="txt" name="city" placeholder="City Id" [(ngModel)]="cityId" />
-      <br /> <input type="submit" class="btn" value="ById" (click)="getWeather()" />  
-    </form>
-  <p>
-      Description: {{description}}<br/>
-      Temperature: {{temp}}<br/>
-      Humidity: {{humidity}}<br/>
-      Time: {{time}}<br/>
-    </p>
+  <div>
+    <br/>
+    <button class="btn" value="GetSport" (click)="getSports()">Get Sport</button>
+  </div>
 
 
-
+  <div *ngIf="showWeather">
+    City: {{cityName}}<br />
+    WeatherID: {{weatherId}}<br />
+    Description: {{description}}<br />
+    Temperature: {{temp}}<br />
+    Humidity: {{humidity}}<br />
+    Time: {{time}}<br />
+    <br/>
+    Sports that you can do :
+    <ul>
+      <li *ngFor="let c of sportsFinal">
+        {{c.name}}
+      </li>
+    </ul>
+  </div>
 </div>

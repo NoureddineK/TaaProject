@@ -1,0 +1,19 @@
+
+<div>   Sports :
+    <ul>
+        <li *ngFor="let c of sports">
+           {{c.name}}
+        </li>
+      </ul>
+   
+</div>
+<p>
+  Cities : 
+ 
+</p>
+
+<p-listbox [options]="places" [(ngModel)]="selectedCity" 
+optionLabel="name" (onDblClick)="getSports()"></p-listbox>
+
+<!--<br /> <button (click)="getSports()" >Get Sports</button>-->
+

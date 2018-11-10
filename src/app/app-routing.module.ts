@@ -4,11 +4,13 @@ import { HomeComponent } from './home/home.component';
 import { SearchPersonComponent } from './search-person/search-person.component';
 import { AddPersonComponent } from './add-person/add-person.component';
 import { WeatherComponent } from './weather/weather.component';
-
+import { PlaceComponent } from './place/place.component';
+import { SportComponent } from './sport/sport.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'Home',
     component: HomeComponent
   },
   {
@@ -22,6 +24,19 @@ const routes: Routes = [
   {
     path: 'Weather',
     component: WeatherComponent
+  }
+  ,
+  {
+    path: 'Place',
+    component: PlaceComponent
+  },
+  {
+    path: 'Sport',
+    component: SportComponent
+  },
+  {
+    path: '',
+    component: LoginComponent
   }
 ];
 @NgModule({
