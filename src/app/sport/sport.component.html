@@ -1,6 +1,8 @@
 <div [@sport]="sports.length">
   <br /> <button class="button" (click)="getSports()">Get All Sports</button>
-
+  <div *ngIf="label">
+    <label for="fname">Click on the item to add it in your sport list</label>
+  </div>
   <div class="flex-container">
     <li class="sport-item" *ngFor="let sport of sports ; let i = index" (click)="AddFavorite(sport.name,i)">
       {{sport.name}}

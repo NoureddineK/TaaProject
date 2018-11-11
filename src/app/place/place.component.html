@@ -1,5 +1,7 @@
 <div [@place]="places.length">
-
+  <div>
+    <label for="fname">Click on the city to see his sports</label>
+  </div>
   <ul class="flex-container">
     <li class="flex-item" *ngFor="let place of places" (click)="getSports(place.name)">
       {{place.name}}
@@ -21,5 +23,7 @@
       {{place.name}}
     </li>
   </div>
-
+  <div *ngIf="label">
+    <label for="fname">Click on the item to add it in your city list</label>
+  </div>
 </div>

@@ -34,10 +34,12 @@ export class SportComponent implements OnInit {
   constructor(private _data: DataService, private route: ActivatedRoute, private router: Router) { }
   personName: string = '';
   sports = [];
+  label : boolean = false;
   ngOnInit() {
     this._data.username.subscribe(res => this.personName = res);
   }
   getSports() {
+    this.label = true;
     this._data.getSports().subscribe(data => {
       this.sports = JSON.parse(JSON.stringify(data));
     }, err => {

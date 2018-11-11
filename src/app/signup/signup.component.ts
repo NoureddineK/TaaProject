@@ -31,6 +31,7 @@ export class SignupComponent implements OnInit {
         this._data.ChangeMail(this.email);
         this._data.ChangeName(this.username);
         this.logged = true;
+        this._data.ChangeLogged(this.logged);
         this.router.navigate(['Home']);
       }, err => {
         console.log(err.message);

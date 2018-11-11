@@ -35,6 +35,7 @@ export class PlaceComponent implements OnInit {
   places = [];
   sports = [];
   placeList = [];
+  label : boolean = false;
 
   constructor(private _data: DataService, private route: ActivatedRoute, private router: Router) {
     this.getCities();
@@ -62,6 +63,7 @@ export class PlaceComponent implements OnInit {
   }
 
   addPlaces() {
+    this.label = true;
     this._data.getPlaces().subscribe(data => {
       this.placeList = JSON.parse(JSON.stringify(data));
     }, err => {

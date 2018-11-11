@@ -12,7 +12,7 @@
       <li><a routerLink="SignUp">Sign Up</a></li>
       <li><a routerLink="">Sign In</a></li>
     </ng-template>
-    <li><button class="logOut" (click)="logOut()">Log Out</button> </li>
+    <li><button class="logOut" (click)="logOut()" *ngIf="userLogged">Log Out</button> </li>
   </ul>
   <router-outlet></router-outlet>
 </div>

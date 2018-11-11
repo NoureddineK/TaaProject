@@ -7,9 +7,10 @@ const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': 'my-auth-token',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'GET',
-    'Access-Control-Allow-Origin': '*'
+    'Access-Control-Allow-Headers': 'Content-Type,Origin, X-Requested-With, Content-Type, Accept',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Credentials': 'true'
   })
 };
 interface myData {
@@ -57,7 +58,7 @@ export class DataService {
   email = this.emails.asObservable();
   logged = this.loggedReq.asObservable();
 
-  server = "http://localhost:8080/";
+  server = "/api/";
 
   constructor(private http: HttpClient) { }
 
