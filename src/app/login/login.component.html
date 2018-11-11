@@ -1,10 +1,24 @@
 <form name="loginForm">
-  User Name: <input type="text"  class="txt" name="item"  
-  placeholder="name" [(ngModel)]="personName" required />
-  <br />
-    Pass Word:  <input type="password" pPassword [(ngModel)]="personPword" class="txt" name="item" placeholder="password" required/>
-  <br /> 
-  <input type="submit" (click)="login()" class="btn" value="Login" />
+  <div class="row">
+    <div class="col-25">
+      <label for="fname"> User Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" class="txt" name="item" placeholder="Your Name.." [(ngModel)]="personName" required />
+    </div>
+  </div>
 
-  
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Pass Word</label>
+    </div>
+    <div class="col-75">
+      <input type="password" pPassword [(ngModel)]="personPword" class="txt" name="item" placeholder="Your Password.."
+        required />
+    </div>
+  </div>
+  <div class="row">
+    <input type="submit" (click)="login()" class="btn" value="Login" />
+  </div>
+
 </form>

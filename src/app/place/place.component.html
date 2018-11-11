@@ -1,16 +1,25 @@
+<div [@place]="places.length">
 
-<div> 
-    
-  Cities : 
+  <ul class="flex-container">
+    <li class="flex-item" *ngFor="let place of places" (click)="getSports(place.name)">
+      {{place.name}}
+    </li>
+  </ul>
 
-<p-listbox [options]="places" [(ngModel)]="selectedCity" 
-optionLabel="name" (onDblClick)="getSports()"></p-listbox>
+  <ul class="flex-container">
+    <li class="sport-item" *ngFor="let sport of sports">
+      {{sport.name}}
+    </li>
+  </ul>
 
-Sports :
-    <ul>
-        <li *ngFor="let c of sports">
-           {{c.name}}
-        </li>
-      </ul>  
+</div>
+
+<div [@place]="placeList.length">
+  <br /> <button class="button" (click)="addPlaces()">Add Favorite City</button>
+  <div class="flex-container">
+    <li class="sport-item" *ngFor="let place of placeList ; let i = index" (click)="AddFavorite(place.name,i)">
+      {{place.name}}
+    </li>
+  </div>
 
 </div>

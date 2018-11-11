@@ -1,12 +1,10 @@
-<div>
-  Sports :
+<div [@sport]="sports.length">
+  <br /> <button class="button" (click)="getSports()">Get All Sports</button>
 
-  <br /> <button (click)="getSports()">Get All Sports</button>
-
-  <ul>
-    <li *ngFor="let sport of sports">
+  <div class="flex-container">
+    <li class="sport-item" *ngFor="let sport of sports ; let i = index" (click)="AddFavorite(sport.name,i)">
       {{sport.name}}
     </li>
-  </ul>
+  </div>
 
 </div>

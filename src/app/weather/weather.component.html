@@ -1,28 +1,50 @@
 <div class="weather">
-  Input city name:
   <form>
-    <input type="text" class="txt" name="city" placeholder="Search.." [(ngModel)]="cityName" />
-    <br /> <input type="submit" class="btn" value="OK" (click)="getWeather()" />
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">City Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="weather" name="city" placeholder="Search.." [(ngModel)]="cityName" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <input type="submit" (click)="getWeather()" class="btn" value="OK" />
+    </div>
   </form>
   <div>
-    <br/>
-    <button class="btn" value="GetSport" (click)="getSports()">Get Sport</button>
+    <br />
+    <button class="button" value="GetSport" (click)="getSports()">Get Sport</button>
   </div>
 
 
   <div *ngIf="showWeather">
-    City: {{cityName}}<br />
-    WeatherID: {{weatherId}}<br />
-    Description: {{description}}<br />
-    Temperature: {{temp}}<br />
-    Humidity: {{humidity}}<br />
-    Time: {{time}}<br />
-    <br/>
-    Sports that you can do :
-    <ul>
-      <li *ngFor="let c of sportsFinal">
-        {{c.name}}
-      </li>
-    </ul>
+
+    <table class="res">
+      <tr>
+        <th>Description</th>
+        <th>Temperature</th>
+        <th>Humidity</th>
+        <th>Time</th>
+      </tr>
+      <tr>
+        <td> {{description}}</td>
+        <td> {{temp}}°</td>
+        <td>{{humidity}}</td>
+        <td>{{time}}</td>
+      </tr>
+    </table>
+
+    <div *ngIf="showRes">
+      <div class="col-25">
+        <label for="fname"> Sports that you can do :</label>
+      </div>
+      <div class="flex-container">
+        <li class="flex-item" *ngFor="let c of sportsList">
+          {{c.name}}
+        </li>
+      </div>
+    </div>
   </div>
 </div>

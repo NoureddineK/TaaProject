@@ -1,3 +1,22 @@
 <div>
-  <p>Welcome to Week End Planner</p>
+  <p> Hi {{personName}} : <br />
+    Welcome to Week End Planner !</p>
+
+  <div [@home]="places.length">
+    <p> Your favorite Cities: </p>
+    <div class="flex-container">
+      <li class="flex-item" *ngFor="let place of places; let i = index" (click)="deletePlace(place.name,i)">
+        {{place.name}}
+      </li>
+    </div>
+  </div>
+  <div [@home]="sports.length">
+    <p> Your favorite Sports: </p>
+    <div class="flex-container">
+      <li class="sport-item" *ngFor="let sport of sports; let i = index" (click)="deleteSport(sport.name,i)">
+        {{sport.name}}
+      </li>
+    </div>
+  </div>
+
 </div>

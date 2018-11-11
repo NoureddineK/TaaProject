@@ -14,9 +14,8 @@ export class WeatherComponent implements OnInit {
   time: string = '';
   weatherId: number;
   showWeather: boolean = false;
+  showRes: boolean = false;
   sportsList = [];
-  sportsFinal = [];
-
   constructor(private _data: DataService) { }
 
   ngOnInit() {
@@ -32,6 +31,8 @@ export class WeatherComponent implements OnInit {
   }
 
   getWeather() {
+    this.showRes = false;
+    this.sportsList = [];
     this._data.getWeather(this.cityName).subscribe(data => {
       console.log(data);
       this.time = this.convertDate(data.time);
@@ -43,26 +44,18 @@ export class WeatherComponent implements OnInit {
       this.showWeather = true;
     }, err => {
       console.log(err.message);
-    }, () => {
-      console.log('Completed');
     });
 
   }
-  getSports() {
-    this._data.getSportsFromPlaces(this.cityName).subscribe(data => {
-      this.sportsList = JSON.parse(JSON.stringify(data));
-      for (var i = 0; i < this.sportsList.length; i++) {
-        var wId = (this.weatherId / 100).toFixed(0);
-        var sId = (this.sportsList[i].weatherID / 100).toFixed(0);
-        if (wId == sId) {
-          this.sportsFinal.push(this.sportsList[i]);
-        }
-      }
-    }, err => {
-      console.log(err.message);
-    }, () => {
-      console.log('Completed');
-    });
+  getSports() { 
+    if (this.cityName !== '') {
+      this.showRes = true;
+      this._data.getSportsWeatherID(this.weatherId, this.cityName).subscribe(data => {  
+        this.sportsList = JSON.parse(JSON.stringify(data));  
+      }, err => {
+        console.log(err.message);
+      });
+    }
   }
 
 }
