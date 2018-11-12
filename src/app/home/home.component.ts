@@ -48,8 +48,6 @@ export class HomeComponent implements OnInit {
         this.sports = JSON.parse(JSON.stringify(data));
       }, err => {
         console.log(err.message);
-      }, () => {
-        console.log('Completed');
       });
     }
   }
@@ -59,8 +57,6 @@ export class HomeComponent implements OnInit {
       this.places = JSON.parse(JSON.stringify(data));
     }, err => {
       console.log(err.message);
-    }, () => {
-      console.log('Completed');
     });
   }
 
